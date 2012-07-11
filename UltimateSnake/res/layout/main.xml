@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/newgamebn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/newgame" />
+
+    <ImageButton
+        android:id="@+id/achievementbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/newgamebn"
+        android:src="@drawable/achievement" />
+
+    <ImageButton
+        android:id="@+id/optionbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/achievementbn"
+        android:src="@drawable/option" />
+
+    <ImageButton
+        android:id="@+id/exitbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/optionbn"
+        android:src="@drawable/exit" />
+
+    <ImageButton
+        android:id="@+id/musicbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/musicbn" />
+     <ImageButton
+        android:id="@+id/soundbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/musicbn"
+        android:src="@drawable/soundbn" />
+  
+
+</RelativeLayout>

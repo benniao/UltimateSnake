@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="options">
+   
+        <item>游戏介绍</item>
+        <item>关于我们</item>
+    </string-array>
+  
+
+</resources>

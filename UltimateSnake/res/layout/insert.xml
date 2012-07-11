@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TableLayout
+	android:id="@+id/loginForm"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+   <TableRow >
+  <TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="用户名:"
+	android:textSize="10pt"
+	/>
+  <EditText
+    android:id="@+id/name"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:hint="请填写登录帐号"
+	android:selectAllOnFocus="true"
+	/>
+  </TableRow>
+<TableRow>
+<TextView
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="密码:"
+	android:textSize="10pt"	
+	/>
+<!-- 输入密码的文本框 -->	
+<EditText
+    android:id="@+id/score"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:password="true"
+	/>
+</TableRow>
+
+<Button
+    android:id="@+id/log"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Log" />
+
+ </TableLayout>
+</LinearLayout>

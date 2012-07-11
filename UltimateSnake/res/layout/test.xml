@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eaeaea"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="15dip"
+        android:src="@drawable/renren_login_logo" />
+
+    <Button
+        android:id="@+id/shoot"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginBottom="12dip"
+        android:gravity="center"
+        android:text="截图" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="15dip"
+        android:src="@drawable/renren_login_logo" />
+
+    <Button
+        android:id="@+id/renRenShare"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginBottom="12dip"
+        android:gravity="center"
+        android:text="分享到人人" />
+
+    <Button
+        android:id="@+id/xinLangShare"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginBottom="12dip"
+        android:gravity="center"
+        android:text="分享到新浪" />
+
+</LinearLayout>
