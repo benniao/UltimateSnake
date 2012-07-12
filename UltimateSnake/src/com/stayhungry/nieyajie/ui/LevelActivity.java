@@ -3,38 +3,71 @@ package com.stayhungry.nieyajie.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.GestureDetector;
-import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.stayhungry.libuyi.logic.R;
 import com.stayhungry.snake.logic.Snack_703Activity;
 
-public class LevelActivity extends Activity implements OnGestureListener {
+public class LevelActivity extends Activity {
 	ImageView level1;
 	GestureDetector myGestureDetector;
-	private static final int SWIPE_MIN_DISTANCE = 120;
-	private static final int SWIPE_THRESHOLD_VEOCITY = 250;
 	Animation anim, reverse;
+	ScrollView scrollView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.level);
-		// 手势检测器
-		myGestureDetector = new GestureDetector(this);
+		final int touchEventId1 = -9983761;
+		final int touchEventId2 = -9983768;
+
 		level1 = (ImageView) findViewById(R.id.level1);
-		// 加载动画资源
-		anim = AnimationUtils.loadAnimation(this, R.anim.anim);
-		anim.setFillAfter(true);
-		reverse = AnimationUtils.loadAnimation(this, R.anim.reverse);
-		reverse.setFillAfter(true);
+		scrollView = (ScrollView) findViewById(R.id.scrolllevel);
+		scrollView.setOnTouchListener(new OnTouchListener() {
+			Handler handler = new Handler() {
+
+				@Override
+				public void handleMessage(Message msg) {
+					// TODO Auto-generated method stub
+					super.handleMessage(msg);
+					if (msg.what == touchEventId1) {
+						Toast.makeText(LevelActivity.this, "scroll begin", 100)
+								.show();
+					}
+					if (msg.what == touchEventId2) {
+						Toast.makeText(LevelActivity.this, "scroll stop", 100)
+								.show();
+					}
+				}
+
+			};
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				// TODO Auto-generated method stub
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					handler.sendMessageDelayed(
+							handler.obtainMessage(touchEventId1, v), 1);
+				}
+				if (event.getAction() == MotionEvent.ACTION_UP) {
+					handler.sendMessageDelayed(
+							handler.obtainMessage(touchEventId2, v), 1);
+				}
+				return false;
+			}
+
+		});
 		level1.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -45,75 +78,6 @@ public class LevelActivity extends Activity implements OnGestureListener {
 				startActivity(intent);
 			}
 		});
-	}
-
-	private void OnClickListener() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		// TODO Auto-generated method stub
-		return myGestureDetector.onTouchEvent(event);
-	}
-
-	@Override
-	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-			float velocityY) {
-
-		// TODO Auto-generated method stub
-		if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE
-				&& Math.abs(velocityY) > SWIPE_THRESHOLD_VEOCITY) {
-			level1.setAnimation(anim);
-			level1.startAnimation(anim);
-
-		}
-		if (e2.getY() - e1.getY() > SWIPE_MIN_DISTANCE
-				&& Math.abs(velocityY) > SWIPE_THRESHOLD_VEOCITY) {
-			level1.setAnimation(reverse);
-			level1.startAnimation(reverse);
-
-		}
-		return true;
-	}
-
-	@Override
-	public void onLongPress(MotionEvent e) {
-		// TODO Auto-generated method stub
-		// Toast.makeText(LevelActivity.this, "onLongPress", 100).show();
-
-	}
-
-	@Override
-	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
-			float distanceY) {
-		// TODO Auto-generated method stub
-		// Toast.makeText(LevelActivity.this, "onScroll", 100).show();
-
-		return false;
-	}
-
-	@Override
-	public void onShowPress(MotionEvent e) {
-		// Toast.makeText(LevelActivity.this, "onShowPress", 100).show();
-
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public boolean onSingleTapUp(MotionEvent e) {
-		// TODO Auto-generated method stub
-		// Toast.makeText(LevelActivity.this, "onSingleTapUp", 100).show();
-
-		return false;
-	}
-
-	@Override
-	public boolean onDown(MotionEvent e) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 }

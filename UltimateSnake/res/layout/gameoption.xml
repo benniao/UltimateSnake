@@ -3,18 +3,23 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_vertical" >
-	<ImageButton android:id="@+id/backToMain"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentLeft="true"
-	    android:layout_alignParentTop="true"
-	    android:src="@drawable/back"/>
+
+    <ImageButton
+        android:id="@+id/backToMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#00ffffff"
+        android:src="@drawable/back" />
+
     <ImageButton
         android:id="@+id/limittime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/limittime" />
+        android:background="#00ffffff"
+        android:src="@drawable/limittimebn" />
 
     <ImageButton
         android:id="@+id/classic"
@@ -22,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/limittime"
         android:layout_alignLeft="@id/limittime"
-        android:src="@drawable/classic" />
+        android:background="#00ffffff"
+        android:src="@drawable/classicbn" />
 
     <ImageButton
         android:id="@+id/abc"
@@ -30,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/limittime"
         android:layout_below="@id/limittime"
-        android:src="@drawable/abc" />
+        android:background="#00ffffff"
+        android:src="@drawable/abcbn" />
 
     <ImageButton
         android:id="@+id/doubleperson"
@@ -38,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/abc"
         android:layout_below="@id/abc"
-        android:src="@drawable/doubleperson" />
+        android:background="#00ffffff"
+        android:src="@drawable/abcbn" />
 
 </RelativeLayout>

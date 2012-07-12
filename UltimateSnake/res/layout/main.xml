@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:background="#00ffffff"
         android:src="@drawable/newgame" />
 
     <ImageButton
@@ -17,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/newgamebn"
-        android:src="@drawable/achievement" />
+        android:background="#00ffffff"
+        android:src="@drawable/achievementbn" />
 
     <ImageButton
         android:id="@+id/optionbn"
@@ -25,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/achievementbn"
-        android:src="@drawable/option" />
+        android:background="#00ffffff"
+        android:src="@drawable/gameoption" />
 
     <ImageButton
         android:id="@+id/exitbn"
@@ -33,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@id/optionbn"
+        android:background="#00ffffff"
         android:src="@drawable/exit" />
 
     <ImageButton
@@ -40,14 +44,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:background="#00ffffff"
         android:src="@drawable/musicbn" />
-     <ImageButton
+
+    <ImageButton
         android:id="@+id/soundbn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/musicbn"
+        android:background="#00ffffff"
         android:src="@drawable/soundbn" />
-  
 
 </RelativeLayout>
